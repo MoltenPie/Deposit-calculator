@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/assets/jquery.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="/assets/air-datepicker.js"></script>
+    <link rel="stylesheet" href="/assets/air-datepicker.css">
+    <script type="text/javascript" src="/assets/jquery.validate.js"></script>    
+    <title>Deposit Calculator</title>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="assets/logo-light 1.svg" alt="logo">
+        <h5 id="title1">Deposit Calculator</h5>
+    </header>
+
+    <div id="body_block">
+        <h1 id="title2">Депозитный калькулятор</h1>
+        <p id="description">Калькулятор депозитов позволяет рассчитать ваши доходы после внесения суммы на счет в банке по опредленному тарифу.</p>
+        
+        <form action="/calc.php" method="post" class="ajax">
+            <div class="formDiv">
+                <label for="startDate">Дата открытия</label>
+                <input type="text" id="startDate" name="startDate" autocomplete="off">
+            </div>
+            <div class="formDiv">
+                <label for="term">Срок вклада</label>
+                <input type="number" id="term" name="term" autocomplete="off">
+                <select name="mory" id="mory">
+                    <option value="month">месяц</option>
+                    <option value="year">год</option>
+                </select>
+            </div>
+            <div class="formDiv">
+                <label for="sum">Сумма вклада</label>
+                <input type="number" id="sum" name="sum" autocomplete="off">
+            </div>
+            <div class="formDiv">
+                <label for="percent">Процентная ставка, % годовых</label>
+                <input type="number" id="percent" name="percent" autocomplete="off">                
+            </div>
+            <div class="formDiv">
+                <div id="checkbox">
+                <label for="monthly" id="addLabel">Ежемесячное пополнение вклада</label>
+                <input type="checkbox" id="monthly" name="monthly" onchange="hideField(this.checked)">
+                </div>
+            </div>
+            <div class="formDiv" id="sumAddField">
+                <label id="sumAddLabel" for="sumAdd">Сумма пополнения вклада</label>
+                <input type="number" id="sumAdd" name="sumAdd" autocomplete="off">                
+            </div>
+            <div class="submit">
+                <input type="submit" id="submit" name="submit" value="Рассчитать">
+            </div>            
+        </form>
+
+    </div>
+
+    <div class="hidden" id="resultBlock">
+        <hr>
+        <p id="sumToPay">Сумма к выплате</p>
+        <span id="result"></span>
+    </div>    
+    
+</body>
