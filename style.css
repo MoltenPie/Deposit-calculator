@@ -76,7 +76,9 @@ form {
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    margin: 53px auto;
+    margin: auto;
+    margin-top: 53px;
+    margin-bottom: 9px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -171,9 +173,13 @@ input[type=submit] {
     color: #FFFFFF;
 }
 
+#checkboxDiv {
+    height: 90px;
+}
+
 .submit {
-    position: absolute;
-    top: 517px;
+    width: 572px;
+    text-align: left;
 }
 
 input:focus {
@@ -198,9 +204,9 @@ input[type=submit]:hover {
 }
 
 #resultBlock {
-    position: relative;
+    
     margin: auto;
-    top: -757px;    
+       
     width: 572px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -227,12 +233,3 @@ input[type=submit]:hover {
 .hidden {
     display: none;
 }
-
-
-
-
-
-
-
-
-

@@ -48,7 +48,7 @@
                 <label for="percent">Процентная ставка, % годовых</label>
                 <input type="number" id="percent" name="percent" autocomplete="off">                
             </div>
-            <div class="formDiv">
+            <div class="formDiv" id="checkboxDiv">
                 <div id="checkbox">
                 <label for="monthly" id="addLabel">Ежемесячное пополнение вклада</label>
                 <input type="checkbox" id="monthly" name="monthly" onchange="hideField(this.checked)">
@@ -63,12 +63,14 @@
             </div>            
         </form>
 
+        <div class="hidden" id="resultBlock">
+            <hr>
+            <p id="sumToPay">Сумма к выплате</p>
+            <span id="result"></span>
+        </div>   
+
     </div>
 
-    <div class="hidden" id="resultBlock">
-        <hr>
-        <p id="sumToPay">Сумма к выплате</p>
-        <span id="result"></span>
-    </div>    
+     
     
 </body>
